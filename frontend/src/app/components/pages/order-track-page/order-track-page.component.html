@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="content">
+        <app-title title="Order #{{order.id}}" fontSize="1.6rem"></app-title>
+            <div class="summary">
+                <div>
+                    <h3>Date</h3>
+                    <span>{{order.createdAt | date:'medium'}}</span>
+                </div>
+                <div>
+                    <h3>Name</h3>
+                    <span>{{order.name}}</span>
+                </div>
+                <div>
+                    <h3>Address</h3>
+                    <span>{{order.address}}</span>
+                </div>
+                <div>
+                    <h3>Status</h3>
+                    <span>{{order.status}}</span>
+                </div>
+                <div>
+                    <h3>Payment ID</h3>
+                    <span>{{order.paymentId}}</span>
+                </div>
+            </div>
+        <order-items-list [order]="order"></order-items-list>
+    </div>
+    <div class="map">
+        <app-title
+        title="Shipping address"
+        fontSize="1.6rem">
+        </app-title>
+        <map [order]="order" [readonly]="true"></map>
+    </div>
+</div>

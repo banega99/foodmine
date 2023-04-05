@@ -1,0 +1,9 @@
+<div class="container" [ngStyle]="{'background-color' : bgColor}" [ngClass]="{'error-border': class}">
+    <label for="">
+        {{label}}
+    </label>
+
+    <div class="content">
+        <ng-content></ng-content>
+    </div>
+</div>

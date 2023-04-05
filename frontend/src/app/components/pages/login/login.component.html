@@ -1,0 +1,28 @@
+<div class="container">
+
+    <form action="" [formGroup]="loginForm"  (ngSubmit)="login(loginForm)">
+        <h1>Login</h1>
+        <input-container label="Email" [class]="fc.email.touched && fc.email.invalid">
+            <input type="email" name="email" placeholder="Email" formControlName="email"
+                [ngClass]="{'error-border': fc.email.touched && fc.email.invalid}">
+            <div *ngIf="fc.email.touched && fc.email.invalid" class="error-container">
+                <div *ngIf="fc.email.errors?.required" class="error">Email is required</div>
+                <div *ngIf="fc.email.errors?.email" class="error">Please enter valid Email Adress</div>
+            </div>
+            
+        </input-container>
+        <input-container label="Password" [class]="fc.password.touched && fc.password.invalid">
+            <input type="password" name="password" placeholder="Password" formControlName="password"
+                minlength="5" [ngClass]="{'error-border': fc.password.touched && fc.password.invalid}">
+            <div *ngIf="fc.password.touched && fc.password.invalid" class="error-container">
+                <div *ngIf="fc.password.errors?.required" class="error">Password is required</div>
+                <div *ngIf="fc.password.errors?.minlength" class="error">Password must be minimum 5 characters long</div>
+            </div>
+        </input-container>
+        <button [disabled]="loginForm.invalid" [ngClass]="{'disabled': loginForm.invalid}">Login</button>
+        <div class="register">
+            <p>New user? Register <a routerLink="/register">here</a>!</p>
+        </div>
+    </form>
+
+</div>

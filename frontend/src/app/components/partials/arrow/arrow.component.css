@@ -1,0 +1,38 @@
+.arrow{
+    opacity: 0.8;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e72929;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow div {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    height: 8px;
+    width: 8px;
+}
+
+.left div {
+    transform: rotate(-45deg);
+}
+
+.right div {
+    transform: rotate(135deg);
+}
+
+.arrow:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* .opacity {
+    opacity: 0.1;
+} */
+
+/* .opacity:hover {
+    opacity: 0.1!important;
+} */

@@ -1,0 +1,56 @@
+<div class="container">
+
+    <form action="" [formGroup]="registerForm"  (ngSubmit)="register(registerForm)">
+        <h1>Register</h1>
+        <input-container label="Name" [class]="fc.name.touched && fc.name.invalid">
+            <input type="text" name="name" placeholder="Name" formControlName="name"
+                [ngClass]="{'error-border': fc.name.touched && fc.name.invalid}">
+            <div *ngIf="fc.name.touched && fc.name.invalid" class="error-container">
+                <div *ngIf="fc.name.errors?.required" class="error">Name is required</div>
+                <div *ngIf="fc.name.errors?.minlength" class="error">Name must be minimum 5 characters long!</div>
+            </div>
+            
+        </input-container>
+        <input-container label="Email" [class]="fc.email.touched && fc.email.invalid">
+            <input type="email" name="email" placeholder="Email" formControlName="email"
+                [ngClass]="{'error-border': fc.email.touched && fc.email.invalid}">
+            <div *ngIf="fc.email.touched && fc.email.invalid" class="error-container">
+                <div *ngIf="fc.email.errors?.required" class="error">Email is required</div>
+                <div *ngIf="fc.email.errors?.email" class="error">Please enter valid Email Adress</div>
+            </div>
+            
+        </input-container>
+        <input-container label="Password" [class]="fc.password.touched && fc.password.invalid">
+            <input type="password" name="password" placeholder="Password" formControlName="password"
+                minlength="5" [ngClass]="{'error-border': fc.password.touched && fc.password.invalid}">
+            <div *ngIf="fc.password.touched && fc.password.invalid" class="error-container">
+                <div *ngIf="fc.password.errors?.required" class="error">Password is required</div>
+                <div *ngIf="fc.password.errors?.minlength" class="error">Password must be minimum 5 characters long</div>
+            </div>
+        </input-container>
+        <input-container label="Confirm Password" [class]="fc.confirmPassword.touched && fc.confirmPassword.invalid">
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword"
+                minlength="5" [ngClass]="{'error-border': fc.confirmPassword.touched && fc.confirmPassword.invalid}">
+            <div *ngIf="fc.confirmPassword.touched && fc.confirmPassword.invalid" class="error-container">
+                <div *ngIf="fc.confirmPassword.errors?.required" class="error">Password is required</div>
+                <div *ngIf="fc.confirmPassword.errors?.notMatch" class="error">Passwords doesn't match!</div>
+            </div>
+        </input-container>
+        <input-container label="Address" [class]="fc.address.touched && fc.address.invalid">
+            <input type="text" name="address" placeholder="Address" formControlName="address"
+                [ngClass]="{'error-border': fc.address.touched && fc.address.invalid}">
+            <div *ngIf="fc.address.touched && fc.address.invalid" class="error-container">
+                <div *ngIf="fc.address.errors?.required" class="error">Address is required</div>
+                <div *ngIf="fc.address.errors?.minlength" class="error">Address must be minimum 10 characters long</div>
+            </div>
+            
+        </input-container>
+        
+        
+        <button [disabled]="registerForm.invalid"  [ngClass]="{'disabled': registerForm.invalid}">Register</button>
+        <div class="register">
+            <p>Already a user? Login <a routerLink="/login">here</a>!</p>
+        </div>
+    </form>
+
+</div>
