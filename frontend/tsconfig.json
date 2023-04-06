@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist",
+    "outDir": "./dist/frontend",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

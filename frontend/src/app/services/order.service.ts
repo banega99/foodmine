@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../shared/models/Order';
 import { HttpClient } from '@angular/common/http';
-import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL, ORDER_PAY_URL, ORDER_TRACK_URL } from '../shared/constants/urls';
+import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL, ORDER_PAY_URL, ORDER_TRACK_URL, USER_ORDERS_URL } from '../shared/constants/urls';
 import { Observable, tap } from 'rxjs';
 
 @Injectable({
@@ -25,5 +25,9 @@ export class OrderService {
 
   trackOrderById(id: number): Observable<Order>{
     return this.http.get<Order>(ORDER_TRACK_URL + id)
+  }
+
+  loggedUserOrders(userName: string): Observable<Order[]>{
+    return this.http.get<Order[]>(USER_ORDERS_URL + userName)
   }
 }

@@ -1,0 +1,20 @@
+.container div {
+    padding: 2px!important;
+    max-height: 45px!important;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.container div p {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 19px;
+    height: fit-content;
+}
+
+.container div h3 {
+    height: fit-content;
+    display: inline-block;
+    min-width: 120px;
+}

@@ -10,8 +10,8 @@
                     <a routerLink="/dashboard">{{user.name}}</a>
                     <div class="menu">
                         
-                        <a routerLink="/profile">Profile</a>
-                        <a routerLink="/orders">Orders</a>
+                        <a routerLink="/profile/{{user.id}}">Profile</a>
+                        <a routerLink="/user/{{user.name}}">Orders</a>
                         <a href="" (click)="logout()">Logout</a>
                     </div>
                 </li>
