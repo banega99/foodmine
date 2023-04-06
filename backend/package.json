@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "cd src && nodemon server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "cd backend && npm run build",
+    "build": "cd frontend && npm run build"
   },
   "keywords": [],
   "author": "",
