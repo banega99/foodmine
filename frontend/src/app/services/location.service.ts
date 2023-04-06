@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { error } from 'console';
 import { LatLngLiteral } from 'leaflet';
 import { Observable } from 'rxjs';
 
