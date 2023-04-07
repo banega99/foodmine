@@ -12,7 +12,7 @@ import { User } from 'src/app/shared/models/User';
 export class ProfilePageComponent {
 
   user!: User
-  ordersMade!: number
+  ordersMade: number = 0
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private orderService: OrderService){
     activatedRoute.params.subscribe(params => {
       if(!params.id) return
@@ -20,7 +20,7 @@ export class ProfilePageComponent {
       userService.getUserProfie(params.id).subscribe(user => {
         console.log(user)
         this.user = user
-        orderService.loggedUserOrders(this.user.name).subscribe(order => this.ordersMade = order.length)
+        orderService.loggedUserOrders(this.user.id).subscribe(order => this.ordersMade = order.length)
       })
     })
     

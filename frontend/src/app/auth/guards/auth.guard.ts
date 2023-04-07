@@ -12,13 +12,14 @@ export class AuthGuard implements CanActivate {
   userLogin!: boolean
 
   constructor(private userService: UserService, private router: Router, private toastr: ToastrService){
-    this.userService.userLogin.subscribe(login => this.userLogin = login)
+    
   }
 
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      this.userService.userLogin.subscribe(login => this.userLogin = login)
       if(!this.userLogin) {
         this.router.navigateByUrl('/')
         return false
