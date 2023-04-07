@@ -1,24 +1,30 @@
-<div class="container">
-    <app-title title="{{user}}'s orders:"></app-title>
-<div>
-    <table>
-        <thead>
-            <th>Order No.</th>
-            <th>Food</th>
-            <th>Order Made</th>
-            <th>Price</th>
-        </thead>
-        <tbody *ngFor="let order of orders; let i = index">
-            <td>{{i+1}}.</td>
-            <td >
-                <div *ngFor="let food of order.items" class="food">
-                    <a routerLink="/food/{{food.food.id}}"><img [src]="food.food.imageUrl"><span class="quantity">{{food.quantity}}</span></a>
-                </div>
-            </td>
-            <td>{{order.createdAt | date: 'medium'}}</td>
-            <td>{{order.totalPrice | currency}}</td>
-        </tbody>
-    </table>
-</div>
+<div class="zero-orders" *ngIf="!visible">
+    <zero-orders [userName]="name"></zero-orders>
 </div>
 
+<div class="container" *ngIf="visible">
+    <div >
+        <app-title title="{{name}}'s orders:"></app-title>
+    </div>
+    <div >
+        <table>
+            <thead>
+                <th>Order No.</th>
+                <th>Food</th>
+                <th>Order Made</th>
+                <th>Price</th>
+            </thead>
+            <tbody *ngFor="let order of orders; let i = index">
+                <td>{{i+1}}.</td>
+                <td>
+                    <div *ngFor="let food of order.items" class="food">
+                        <a routerLink="/food/{{food.food.id}}"><img [src]="food.food.imageUrl"><span
+                                class="quantity">{{food.quantity}}</span></a>
+                    </div>
+                </td>
+                <td>{{order.createdAt | date: 'medium'}}</td>
+                <td>{{order.totalPrice | currency}}</td>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -27,7 +27,7 @@ export class OrderService {
     return this.http.get<Order>(ORDER_TRACK_URL + id)
   }
 
-  loggedUserOrders(userName: string): Observable<Order[]>{
-    return this.http.get<Order[]>(USER_ORDERS_URL + userName)
+  loggedUserOrders(id: string): Observable<Order[]>{
+    return this.http.get<Order[]>(USER_ORDERS_URL + id)
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
   // userLogin!: boolean
   user!:User
 
-  constructor(private cartService: CartService, private userService: UserService) {
+  constructor(private cartService: CartService, private userService: UserService, private router: Router) {
     // cartService.getCartObservable().subscribe((newCart) => {
     //   this.cartQuantity = newCart.totalCount;
     // })
@@ -29,7 +30,10 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
+    this.router.navigateByUrl('')
     this.userService.logout()
+    
+
     // this.cartService.clearCart()
   }
 

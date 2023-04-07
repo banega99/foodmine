@@ -63,10 +63,10 @@ router.get('/track/:id', asyncHandler(
     }
 ))
 
-router.get('/user/:userName', asyncHandler(
+router.get('/user/:id', asyncHandler(
     async(req: any, res) => {
-        const name = req.params.userName
-        const orders = await OrderModel.find({name: name})
+        const id = req.params.id
+        const orders = await OrderModel.find({user: id})
         res.send(orders)
     }
 ))

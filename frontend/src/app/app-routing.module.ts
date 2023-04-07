@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'checkout', component:CheckoutPageComponent, canActivate: [AuthGuard]},
   {path: 'payments', component:PaymentPageComponent, canActivate: [AuthGuard]},
   {path: 'track/:id', component:OrderTrackPageComponent, canActivate: [AuthGuard]},
-  {path: 'user/:userName', component:UserOrdersComponent, canActivate: [AuthGuard]},
+  {path: 'user/:id', component:UserOrdersComponent, canActivate: [AuthGuard]},
   {path: 'profile/:id', component:ProfilePageComponent, canActivate: [AuthGuard]}
 ];
 
