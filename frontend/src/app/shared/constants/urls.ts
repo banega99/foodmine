@@ -1,4 +1,4 @@
-const BASE_URL = 'https://foodmine-back.onrender.com/'
+const BASE_URL = 'https://foodmine-back.onrender.com'
 
 //http://localhost:5000
 
