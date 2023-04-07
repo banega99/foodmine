@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.OrderModel = exports.OrderItemSchema = exports.LatLngSchema = void 0;
 var mongoose_1 = require("mongoose");
 var food_model_1 = require("./food.model");
@@ -20,7 +20,7 @@ var orderSchema = new mongoose_1.Schema({
     paymentId: { type: String },
     totalPrice: { type: Number, required: true },
     items: { type: [exports.OrderItemSchema], required: true },
-    status: { type: String, default: order_status_1.OrderStatus.NEW },
+    status: { type: String, "default": order_status_1.OrderStatus.NEW },
     user: { type: mongoose_1.Schema.Types.ObjectId, required: true }
 }, {
     timestamps: true,

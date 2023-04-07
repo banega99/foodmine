@@ -49,7 +49,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var express_1 = require("express");
 var express_async_handler_1 = __importDefault(require("express-async-handler"));
 var http_status_1 = require("../constants/http_status");
@@ -57,8 +57,8 @@ var order_model_1 = require("../models/order.model");
 var order_status_1 = require("../constants/order_status");
 var auth_mid_1 = __importDefault(require("../middlewares/auth.mid"));
 var router = (0, express_1.Router)();
-router.use(auth_mid_1.default);
-router.post('/create', (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.use(auth_mid_1["default"]);
+router.post('/create', (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var requestOrder, newOrder;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -83,7 +83,7 @@ router.post('/create', (0, express_async_handler_1.default)(function (req, res) 
         }
     });
 }); }));
-router.get('/newOrderForCurrentUser', (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/newOrderForCurrentUser', (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var order;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -100,7 +100,7 @@ router.get('/newOrderForCurrentUser', (0, express_async_handler_1.default)(funct
         }
     });
 }); }));
-router.post('/pay', (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.post('/pay', (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var paymentId, order;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -123,7 +123,7 @@ router.post('/pay', (0, express_async_handler_1.default)(function (req, res) { r
         }
     });
 }); }));
-router.get('/track/:id', (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/track/:id', (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var id, order;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -137,7 +137,7 @@ router.get('/track/:id', (0, express_async_handler_1.default)(function (req, res
         }
     });
 }); }));
-router.get('/user/:userName', (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/user/:userName', (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var name, orders;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -151,7 +151,7 @@ router.get('/user/:userName', (0, express_async_handler_1.default)(function (req
         }
     });
 }); }));
-exports.default = router;
+exports["default"] = router;
 function getNewOrderForCurrentUser(req) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {

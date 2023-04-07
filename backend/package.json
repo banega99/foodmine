@@ -7,7 +7,7 @@
     "start": "cd src && nodemon server.ts",
     "serve": "npm start",
     "shell": "firebase functions:shell",
-    "build": "npm install && npx tsc"
+    "build": "npm install && tsc "
   },
   "keywords": [],
   "author": "",

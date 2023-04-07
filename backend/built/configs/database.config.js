@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.dbConnect = void 0;
 var mongoose_1 = require("mongoose");
 var dbConnect = function () {
