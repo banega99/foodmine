@@ -1,4 +1,6 @@
-const BASE_URL = 'http://localhost:5000'
+const BASE_URL = 'https://foodmine-back.onrender.com/'
+
+//http://localhost:5000
 
 export const FOODS_URL = BASE_URL + '/api/foods'
 export const FOODS_TAGS_URL = FOODS_URL + '/tags'
