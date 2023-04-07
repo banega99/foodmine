@@ -38,13 +38,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var data_1 = require("../data");
 var express_1 = require("express");
 var express_async_handler_1 = __importDefault(require("express-async-handler"));
 var food_model_1 = require("../models/food.model");
 var router = (0, express_1.Router)();
-router.get("/seed", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/seed", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var foodsCount;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -63,7 +63,7 @@ router.get("/seed", (0, express_async_handler_1["default"])(function (req, res) 
         }
     });
 }); }));
-router.get("/", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var foods;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -75,7 +75,7 @@ router.get("/", (0, express_async_handler_1["default"])(function (req, res) { re
         }
     });
 }); }));
-router.get("/search/:searchTerm", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/search/:searchTerm", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var searchRegex, foods;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -89,7 +89,7 @@ router.get("/search/:searchTerm", (0, express_async_handler_1["default"])(functi
         }
     });
 }); }));
-router.get("/tags", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/tags", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var tags, all;
     var _a;
     return __generator(this, function (_b) {
@@ -127,7 +127,7 @@ router.get("/tags", (0, express_async_handler_1["default"])(function (req, res) 
         }
     });
 }); }));
-router.get("/tags/:tagName", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/tags/:tagName", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var foods;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -139,7 +139,7 @@ router.get("/tags/:tagName", (0, express_async_handler_1["default"])(function (r
         }
     });
 }); }));
-router.get("/:foodId", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/:foodId", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var food;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -151,4 +151,4 @@ router.get("/:foodId", (0, express_async_handler_1["default"])(function (req, re
         }
     });
 }); }));
-exports["default"] = router;
+exports.default = router;

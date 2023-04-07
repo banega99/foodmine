@@ -1,8 +1,8 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var jsonwebtoken_1 = require("jsonwebtoken");
 var http_status_1 = require("../constants/http_status");
-exports["default"] = (function (req, res, next) {
+exports.default = (function (req, res, next) {
     var token = req.headers.access_token;
     if (!token)
         return res.status(http_status_1.HTTP_UNAUTHORIZED).send();

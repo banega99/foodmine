@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.sample_users = exports.sample_tags = exports.sample_foods = void 0;
 exports.sample_foods = [
     {
@@ -11,7 +11,7 @@ exports.sample_foods = [
         origins: ['italy'],
         stars: 4.5,
         imageUrl: 'assets/images/foods/food-1.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch']
+        tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
         id: '2',
@@ -22,7 +22,7 @@ exports.sample_foods = [
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
         imageUrl: 'assets/images/foods/food-2.jpg',
-        tags: ['SlowFood', 'Lunch']
+        tags: ['SlowFood', 'Lunch'],
     },
     {
         id: '3',
@@ -33,7 +33,7 @@ exports.sample_foods = [
         origins: ['germany', 'us'],
         stars: 3.5,
         imageUrl: 'assets/images/foods/food-3.jpg',
-        tags: ['FastFood', 'Hamburger']
+        tags: ['FastFood', 'Hamburger'],
     },
     {
         id: '4',
@@ -44,7 +44,7 @@ exports.sample_foods = [
         origins: ['belgium', 'france'],
         stars: 3.3,
         imageUrl: 'assets/images/foods/food-4.jpg',
-        tags: ['FastFood', 'Fry']
+        tags: ['FastFood', 'Fry'],
     },
     {
         id: '5',
@@ -55,7 +55,7 @@ exports.sample_foods = [
         origins: ['india', 'asia'],
         stars: 3.0,
         imageUrl: 'assets/images/foods/food-5.jpg',
-        tags: ['SlowFood', 'Soup']
+        tags: ['SlowFood', 'Soup'],
     },
     {
         id: '6',
@@ -66,7 +66,7 @@ exports.sample_foods = [
         origins: ['italy'],
         stars: 4.0,
         imageUrl: 'assets/images/foods/food-6.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch']
+        tags: ['FastFood', 'Pizza', 'Lunch'],
     },
 ];
 exports.sample_tags = [
@@ -85,13 +85,13 @@ exports.sample_users = [
         email: "john@gmail.com",
         password: "12345",
         address: "Toronto On",
-        isAdmin: true
+        isAdmin: true,
     },
     {
         name: "Jane Doe",
         email: "Jane@gmail.com",
         password: "12345",
         address: "Shanghai",
-        isAdmin: false
+        isAdmin: false,
     },
 ];

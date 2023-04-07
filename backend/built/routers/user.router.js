@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var data_1 = require("../data");
 var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -47,7 +47,7 @@ var user_model_1 = require("../models/user.model");
 var http_status_1 = require("../constants/http_status");
 var bcryptjs_1 = __importDefault(require("bcryptjs"));
 var router = (0, express_1.Router)();
-router.get("/seed", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get("/seed", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var usersCount;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -66,7 +66,7 @@ router.get("/seed", (0, express_async_handler_1["default"])(function (req, res) 
         }
     });
 }); }));
-router.post("/login", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.post("/login", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, email, password, user, _b;
     return __generator(this, function (_c) {
         switch (_c.label) {
@@ -79,7 +79,7 @@ router.post("/login", (0, express_async_handler_1["default"])(function (req, res
                 ;
                 _b = user;
                 if (!_b) return [3 /*break*/, 3];
-                return [4 /*yield*/, bcryptjs_1["default"].compare(password, user.password)];
+                return [4 /*yield*/, bcryptjs_1.default.compare(password, user.password)];
             case 2:
                 _b = (_c.sent());
                 _c.label = 3;
@@ -94,7 +94,7 @@ router.post("/login", (0, express_async_handler_1["default"])(function (req, res
         }
     });
 }); }));
-router.post("/register", (0, express_async_handler_1["default"])(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.post("/register", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, name, email, password, address, user, encryptedPassword, newUser, dbUser;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -108,7 +108,7 @@ router.post("/register", (0, express_async_handler_1["default"])(function (req, 
                         .send('User already exists, please login!');
                     return [2 /*return*/];
                 }
-                return [4 /*yield*/, bcryptjs_1["default"].hash(password, 10)];
+                return [4 /*yield*/, bcryptjs_1.default.hash(password, 10)];
             case 2:
                 encryptedPassword = _b.sent();
                 newUser = {
@@ -127,8 +127,22 @@ router.post("/register", (0, express_async_handler_1["default"])(function (req, 
         }
     });
 }); }));
+router.get('/profile/:id', (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var id, user;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                id = req.params.id;
+                return [4 /*yield*/, user_model_1.UserModel.findById(id)];
+            case 1:
+                user = _a.sent();
+                res.send(user);
+                return [2 /*return*/];
+        }
+    });
+}); }));
 var generateTokenResponse = function (user) {
-    var token = jsonwebtoken_1["default"].sign({
+    var token = jsonwebtoken_1.default.sign({
         id: user.id, email: user.email, isAdmin: user.isAdmin
     }, "${process.env.TOKEN_SECRET}", {
         expiresIn: "30d"
@@ -142,4 +156,4 @@ var generateTokenResponse = function (user) {
         token: token
     };
 };
-exports["default"] = router;
+exports.default = router;
