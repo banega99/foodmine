@@ -1,3 +1,8 @@
+.container {
+    width: fit-content;
+    margin: 20px auto;
+}
+
 table {
     border-bottom: 100px;
 }

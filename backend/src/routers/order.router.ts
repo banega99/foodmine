@@ -31,6 +31,7 @@ router.post('/create', asyncHandler(
 
 router.get('/newOrderForCurrentUser', asyncHandler(
     async(req: any, res: any) => {
+        console.log(req.params)
         const order = await getNewOrderForCurrentUser(req)
         if(order) res.send(order)
         else res.status(HTTP_BAD_REQUEST).send()

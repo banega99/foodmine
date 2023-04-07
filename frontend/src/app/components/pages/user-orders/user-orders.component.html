@@ -1,5 +1,6 @@
-<app-title title="{{user}}'s orders:"></app-title>
 <div class="container">
+    <app-title title="{{user}}'s orders:"></app-title>
+<div>
     <table>
         <thead>
             <th>Order No.</th>
@@ -11,7 +12,7 @@
             <td>{{i+1}}.</td>
             <td >
                 <div *ngFor="let food of order.items" class="food">
-                    <img [src]="food.food.imageUrl"><span class="quantity">{{food.quantity}}</span>
+                    <a routerLink="/food/{{food.food.id}}"><img [src]="food.food.imageUrl"><span class="quantity">{{food.quantity}}</span></a>
                 </div>
             </td>
             <td>{{order.createdAt | date: 'medium'}}</td>
@@ -19,3 +20,5 @@
         </tbody>
     </table>
 </div>
+</div>
+
