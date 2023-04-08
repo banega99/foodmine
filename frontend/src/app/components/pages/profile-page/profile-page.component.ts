@@ -18,7 +18,6 @@ export class ProfilePageComponent {
       if(!params.id) return
 
       userService.getUserProfie(params.id).subscribe(user => {
-        console.log(user)
         this.user = user
         orderService.loggedUserOrders(this.user.id).subscribe(order => this.ordersMade = order.length)
       })

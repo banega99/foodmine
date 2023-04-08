@@ -45,8 +45,6 @@ export class RegisterComponent implements OnInit {
       address: fv.address
     }
 
-    console.log(fv)
-
     this.userSerivce.register(user)
     this.router.navigateByUrl('/')
   }

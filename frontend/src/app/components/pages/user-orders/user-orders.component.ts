@@ -24,7 +24,5 @@ export class UserOrdersComponent {
         this.visible = true
     })
     })
-    console.log(this.orders)
-    console.log(this.visible)
   }
 }

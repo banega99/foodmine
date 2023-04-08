@@ -22,7 +22,6 @@ export class FoodPageComponent implements OnInit {
       this.foodService.getFoodById(params.id)
       .subscribe(food => this.food = food);
     })
-    console.log(this.food);
    }
 
   ngOnInit(): void {

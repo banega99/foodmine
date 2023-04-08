@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
 
   foodTerm!: string 
 
+  counter = 0
+
   constructor(private foodService: FoodService, private activatedRoute: ActivatedRoute) {
   }
 
@@ -30,14 +32,15 @@ export class HomeComponent implements OnInit {
 
         foodsObservable.subscribe(serverFoods => this.foods = serverFoods)  
     })
-    console.log(this.foodTerm)
   }
 
   
 
   getOutputSearch(selected: string){
-    console.log(selected)
-    if(selected == '') this.foodService.getAll().subscribe(food => this.foods = food);
+    if(selected == '') {
+      this.foodService.getAll().subscribe(food => this.foods = food);
+    }
+    
     this.foodService.getFoodByName(selected).subscribe(food =>{
       this.foods = food
     })

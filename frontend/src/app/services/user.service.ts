@@ -19,7 +19,6 @@ export class UserService {
   constructor(private http: HttpClient, private toastr: ToastrService) {
     this.userObservable = this.userSubject.asObservable();
     this.userLogin = this.userLoginSubject.asObservable()
-    console.log(this.userLogin.subscribe(user => console.log(user)))
   }
 
   public get currentUser(): User {

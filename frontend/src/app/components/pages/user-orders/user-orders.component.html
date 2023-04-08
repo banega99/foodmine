@@ -16,10 +16,15 @@
             </thead>
             <tbody *ngFor="let order of orders; let i = index">
                 <td>{{i+1}}.</td>
-                <td>
+                <td class="food-cont">
                     <div *ngFor="let food of order.items" class="food">
-                        <a routerLink="/food/{{food.food.id}}"><img [src]="food.food.imageUrl"><span
-                                class="quantity">{{food.quantity}}</span></a>
+                        <div class="one">
+                            <a routerLink="/food/{{food.food.id}}">
+                                <img [src]="food.food.imageUrl">
+                                <span class="quantity">{{food.quantity}}</span>
+                            </a>
+                        </div>
+                        
                     </div>
                 </td>
                 <td>{{order.createdAt | date: 'medium'}}</td>
