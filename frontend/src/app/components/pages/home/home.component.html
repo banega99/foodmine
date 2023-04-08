@@ -1,4 +1,4 @@
-<app-search></app-search>
+<app-search (keyUp)="getOutputSearch($event)"></app-search>
 <app-tags></app-tags>
 <app-not-found
     [visible]="!foods || !foods.length"

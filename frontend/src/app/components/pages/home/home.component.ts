@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
 
   foods: Food[] = []
 
+  foodTerm!: string 
+
   constructor(private foodService: FoodService, private activatedRoute: ActivatedRoute) {
   }
 
@@ -27,6 +29,17 @@ export class HomeComponent implements OnInit {
         foodsObservable = this.foodService.getAll()
 
         foodsObservable.subscribe(serverFoods => this.foods = serverFoods)  
+    })
+    console.log(this.foodTerm)
+  }
+
+  
+
+  getOutputSearch(selected: string){
+    console.log(selected)
+    if(selected == '') this.foodService.getAll().subscribe(food => this.foods = food);
+    this.foodService.getFoodByName(selected).subscribe(food =>{
+      this.foods = food
     })
   }
 
