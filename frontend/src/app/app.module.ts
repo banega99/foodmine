@@ -72,7 +72,7 @@ import { ZeroOrdersComponent } from './components/partials/zero-orders/zero-orde
     ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
-      // positionClass: 'toast-bottom-right',
+      positionClass: 'toast-top-center',
       newestOnTop: false
     }),
     BrowserAnimationsModule

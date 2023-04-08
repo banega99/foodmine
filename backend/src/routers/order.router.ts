@@ -55,19 +55,21 @@ router.post('/pay', asyncHandler(
     }
 ))
 
-router.get('/track/:id', asyncHandler(
-    async(req: any, res) => {
-        const {id} = req.body
-        const order = await OrderModel.findOne({id})
-        res.send(order)
-    }
-))
+
 
 router.get('/user/:id', asyncHandler(
     async(req: any, res) => {
         const id = req.params.id
         const orders = await OrderModel.find({user: id})
         res.send(orders)
+    }
+))
+
+router.get('/track/:id', asyncHandler(
+    async(req: any, res) => {
+        // const {id} = req.body
+        const order = await OrderModel.findById(req.params.id)
+        res.send(order)
     }
 ))
 
