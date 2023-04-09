@@ -28,7 +28,7 @@ router.get("/food/:foodName", asyncHandler(
     async (req, res) => {
         if(req.params.foodName == '') return
         const name = new RegExp(req.params.foodName, 'i')
-        const foods = await FoodModel.find({name: name})
+        const foods = await FoodModel.find({name: {$regex:name}})
         res.send(foods)
     }
 ))

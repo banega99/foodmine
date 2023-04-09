@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventEmitter } from '@angular/core'
 
@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
   counter = 0
   searchTerm: string = '';
   @Output('keyUp') searchKey = new EventEmitter()
+  @ViewChild('s', {static: true})searchInput!: ElementRef<HTMLInputElement>
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { 
   }
@@ -31,5 +32,11 @@ export class SearchComponent implements OnInit {
   search(term: string): void {
     if(term) this.router.navigateByUrl('/search/' + term)
   }
+
+  // handleBackspace(event: KeyboardEvent): void {
+  //   const input = this.searchInput.nativeElement.value
+  //   if(event.key === 'S' && input.length == 0) {
+  //     event.preventDefault()
+  // }}
 
 }
