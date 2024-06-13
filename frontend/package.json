@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm install --force && ng build --configuration production",
-    "watch": "ng build --watch --configuration development --force",
-    "test": "ng test"
+    "build": "npm run postinstall && ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {

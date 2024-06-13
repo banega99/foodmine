@@ -6,11 +6,12 @@
   },
   "description": "1. Introuduction to the course \r 2. Install development tools\r 3. Create Angular App\r     1. Create project's folder\r     2. Install @angular/cli\r     3. Create App as frontend\r 4. Add Header \r     1. Generate Component\r     2. Add html\r     3. Add css\r 5. List Foods\r     1. Create Food model\r     2. Create data.ts\r         1. Add sample foods\r     3. Add images to assets\r     4. Create Food service\r     5. Create Home component\r         1. Add ts\r         2. Add html\r         3. Add css",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd backend/built && node server.js",
-    "prebuild": "cd backend && npm run build",
-    "build": "cd frontend && npm run build"
+ "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "repository": {
     "type": "git",
