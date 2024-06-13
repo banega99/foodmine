@@ -1,35 +1,34 @@
 <div class="zero-orders" *ngIf="!visible">
-    <zero-orders [userName]="name"></zero-orders>
+  <zero-orders [userName]="name"></zero-orders>
 </div>
 
 <div class="container" *ngIf="visible">
-    <div >
-        <app-title title="{{name}}'s orders:"></app-title>
-    </div>
-    <div >
-        <table>
-            <thead>
-                <th>Order No.</th>
-                <th>Food</th>
-                <th>Order Made</th>
-                <th>Price</th>
-            </thead>
-            <tbody *ngFor="let order of orders; let i = index">
-                <td>{{i+1}}.</td>
-                <td class="food-cont">
-                    <div *ngFor="let food of order.items" class="food">
-                        <div class="one">
-                            <a routerLink="/food/{{food.food.id}}">
-                                <img [src]="food.food.imageUrl">
-                                <span class="quantity">{{food.quantity}}</span>
-                            </a>
-                        </div>
-                        
-                    </div>
-                </td>
-                <td>{{order.createdAt | date: 'medium'}}</td>
-                <td>{{order.totalPrice | currency}}</td>
-            </tbody>
-        </table>
-    </div>
+  <div>
+    <app-title title="{{ name }}'s orders:"></app-title>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <th>Order No.</th>
+        <th>Food</th>
+        <th>Order Made</th>
+        <th>Price</th>
+      </thead>
+      <tbody *ngFor="let order of orders; let i = index">
+        <td>{{ i + 1 }}.</td>
+        <td class="food-cont">
+          <div *ngFor="let food of order.items" class="food">
+            <div class="one">
+              <a routerLink="/food/{{ food.food.id }}">
+                <img [src]="food.food.imageUrl" />
+                <span class="quantity">{{ food.quantity }}</span>
+              </a>
+            </div>
+          </div>
+        </td>
+        <td>{{ order.created_at | date: "medium" }}</td>
+        <td>{{ order.total_price | currency }}</td>
+      </tbody>
+    </table>
+  </div>
 </div>

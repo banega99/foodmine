@@ -7,21 +7,26 @@ import { User } from 'src/app/shared/models/User';
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
-  styleUrls: ['./profile-page.component.css']
+  styleUrls: ['./profile-page.component.css'],
 })
 export class ProfilePageComponent {
+  user!: User;
+  ordersMade: number = 0;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService,
+    private orderService: OrderService
+  ) {
+    activatedRoute.params.subscribe((params) => {
+      if (!params.id) return;
 
-  user!: User
-  ordersMade: number = 0
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private orderService: OrderService){
-    activatedRoute.params.subscribe(params => {
-      if(!params.id) return
-
-      userService.getUserProfie(params.id).subscribe(user => {
-        this.user = user
-        orderService.loggedUserOrders(this.user.id).subscribe(order => this.ordersMade = order.length)
-      })
-    })
-    
+      userService.getUserProfie(params.id).subscribe((user) => {
+        this.user = user;
+        console.log(user);
+        orderService
+          .loggedUserOrders(this.user.id)
+          .subscribe((order) => (this.ordersMade = order.length));
+      });
+    });
   }
 }

@@ -1,21 +1,25 @@
 <div class="container">
-    <app-title title="{{user.name}}"></app-title>
-    <div class="content">
-        <div>
-            <h3>User ID</h3><p>{{user.id}}</p>
-        </div>
-        <div>
-            <h3>Email</h3><p>{{user.email}}</p>
-        </div>
-        <div>
-            <h3>Address</h3><p>{{user.address}}</p>
-        </div>
-        <div>
-            <h3>User since</h3><p>{{user.createdAt | date: 'medium'}}</p>
-        </div>
-        <div>
-            <h3>Orders made</h3><p>{{ordersMade}}</p>
-        </div>
-    </div> 
+  <app-title title="{{ user.name }}"></app-title>
+  <div class="content">
+    <div>
+      <h3>User ID</h3>
+      <p>{{ user.id }}</p>
+    </div>
+    <div>
+      <h3>Email</h3>
+      <p>{{ user.email }}</p>
+    </div>
+    <div>
+      <h3>Address</h3>
+      <p>{{ user.address }}</p>
+    </div>
+    <div>
+      <h3>User since</h3>
+      <p>{{ user.createdAt | date: "medium" }}</p>
+    </div>
+    <div>
+      <h3>Orders made</h3>
+      <p>{{ ordersMade }}</p>
+    </div>
+  </div>
 </div>
-

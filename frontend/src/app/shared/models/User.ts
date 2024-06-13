@@ -1,9 +1,9 @@
 export class User {
-    id!:string;
-    email!:string;
-    name!:string;
-    address!:string;
-    token!:string;
-    isAdmin!:boolean;
-    createdAt?:string;
+  id!: string;
+  email!: string;
+  name!: string;
+  address!: string;
+  token!: string;
+  isAdmin!: boolean;
+  createdAt?: string;
 }

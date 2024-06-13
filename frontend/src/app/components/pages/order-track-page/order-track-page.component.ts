@@ -1,35 +1,36 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subscription, map } from 'rxjs';
+import { Observable, Subscription, map, switchMap } from 'rxjs';
 import { OrderService } from 'src/app/services/order.service';
 import { Order } from 'src/app/shared/models/Order';
 
 @Component({
   selector: 'app-order-track-page',
   templateUrl: './order-track-page.component.html',
-  styleUrls: ['./order-track-page.component.css']
+  styleUrls: ['./order-track-page.component.css'],
 })
 export class OrderTrackPageComponent implements OnInit {
+  order!: Order;
 
-  
-
-  id = this.activatedRoute.snapshot.params['id'];
-
-  order!:Order
-
-  constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute) { 
-    console.log(this.id)
-    this.orderService.trackOrderById(this.id).subscribe({
-      next: (order) => {
-        this.order = order
-      },
-      error: (err) => console.log(err)}
-    )
-  
+  constructor(
+    private orderService: OrderService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.params
+      .pipe(
+        switchMap((params) => {
+          console.log(params['id']);
+          return this.orderService.trackOrderById(params['id']);
+        })
+      )
+      .subscribe({
+        next: (order) => {
+          this.order = order;
+          console.log(this.order);
+        },
+        error: (err) => console.error(err),
+      });
   }
 
-  ngOnInit(){
-    
-  }
-
+  ngOnInit() {}
 }
