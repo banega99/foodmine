@@ -1,4 +1,4 @@
-const BASE_URL = 'https://foodmine-backend-bk.vercel.app/';
+const BASE_URL = 'https://foodmine-backend-bk.vercel.app';
 
 //http://localhost:5000
 //https://foodmine-back.onrender.com
